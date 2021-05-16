@@ -1,0 +1,2 @@
+class CandidateTask < ApplicationRecord
+end

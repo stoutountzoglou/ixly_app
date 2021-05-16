@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Task:</strong>
+  <%= @candidate_task.task_id %>
+</p>
+
+<p>
+  <strong>Candidate:</strong>
+  <%= @candidate_task.candidate_id %>
+</p>
+
+<%= link_to 'Edit', edit_candidate_task_path(@candidate_task) %> |
+<%= link_to 'Back', candidate_tasks_path %>
