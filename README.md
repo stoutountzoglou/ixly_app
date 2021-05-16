@@ -28,3 +28,4 @@ Continue here if you had node and yarn already:
 * visit http://127.0.0.1:3000/candidates_index to see all candidates
 * visit http://127.0.0.1:3000/tasks to see all tasks
 * visit http://127.0.0.1:3000/candidate_tasks/new to assign a new task to a candidate
+* some basic functionality has been covered: 'rails db:test:prepare test test:system RAILS_ENV=test'
