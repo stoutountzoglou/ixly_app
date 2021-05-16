@@ -3,3 +3,40 @@
 <%= render 'form', candidate_task: @candidate_task %>
 
 <%= link_to 'Back', candidate_tasks_path %>
+
+<br><br>
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @candidates&.each do |candidate| %>
+      <tr>
+        <td><%= candidate.id %></td>
+        <td><%= candidate.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br><br>
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tasks&.each do |task| %>
+      <tr>
+        <td><%= task.id %></td>
+        <td><%= task.description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

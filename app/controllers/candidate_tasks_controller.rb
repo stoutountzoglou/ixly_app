@@ -10,6 +10,8 @@ class CandidateTasksController < ApplicationController
 
   def new
     @candidate_task = CandidateTask.new
+    @candidates = Candidate.all
+    @tasks = Task.all
   end
 
   def edit
