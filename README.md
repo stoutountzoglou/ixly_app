@@ -24,5 +24,7 @@ Continue here if you had node and yarn already:
 * cd to the folder where you downloaded the project
 * run migrations: 'rails db:migrate'
 * type 'bin/rails server' to run the server
-* visit http://127.0.0.1:3000/candidates
-* you can navigate accordingly to CRUD tasks and candidates.
+* visit http://127.0.0.1:3000/candidates to see assigned tasks per candidate
+* visit http://127.0.0.1:3000/candidates_index to see all candidates
+* visit http://127.0.0.1:3000/tasks to see all tasks
+* visit http://127.0.0.1:3000/candidate_tasks/new to assign a new task to a candidate
