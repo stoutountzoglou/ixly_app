@@ -10,15 +10,19 @@
   </thead>
 
   <tbody>
-    <% @candidates.each do |candidate| %>
+    <% @grouped_candidate_tasks.each do |candidate_row_name, task_descriptions| %>
       <tr>
-        <td><%= "#{candidate.name} #{candidate.surname}" %></td>
+        <td><%= "#{candidate_row_name}" %></td>
         <td>
-          <ul>
-            <% candidate.tasks.map(&:description).each do |description| %>
-              <li><%= description%></li>
-            <% end %>
-          </ul>
+          <% if task_descriptions.any? %>
+            <ul>
+              <% task_descriptions.each do |description| %>
+                <li><%= description%></li>
+              <% end %>
+            </ul>
+          <% else %>
+            no tasks assigned yet
+          <% end %>
         </td>
       </tr>
     <% end %>

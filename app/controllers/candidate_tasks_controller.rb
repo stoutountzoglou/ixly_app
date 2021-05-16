@@ -50,7 +50,11 @@ class CandidateTasksController < ApplicationController
   end
 
   def grouped_candidate_tasks
-    @candidates = Candidate.all
+    # This is not performant obviously. If I was using Postgres, I'd be using some inner joins and ARRAY_AGG
+    @grouped_candidate_tasks = Candidate.all.each_with_object({}) do |candidate, hash|
+                                 hash_key = "#{candidate.name} #{candidate.surname} (#{candidate.email})"
+                                 hash["#{hash_key}"] = candidate.tasks.map(&:description)
+                               end
   end
 
   private
