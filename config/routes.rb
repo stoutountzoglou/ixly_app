@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :candidate_tasks
-  resources :candidates
+  resources :candidates, except: [:index]
+  get '/candidates_index', to: 'candidates#index'
   resources :tasks
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get '/candidates', to: 'candidate_tasks#grouped_candidate_tasks'
 end

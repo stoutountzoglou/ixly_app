@@ -1,7 +1,7 @@
 class BasicSeed < ActiveRecord::Migration[6.1]
   def up
     clean_dishes = Task.create(description: "clean dishes")
-    clean_house = Task.create(description: "clean_house")
+    clean_house = Task.create(description: "clean house")
     cook_food = Task.create(description: "cook food")
     groceries = Task.create(description: "pick up groceries")
 

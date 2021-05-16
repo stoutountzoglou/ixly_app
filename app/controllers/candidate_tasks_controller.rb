@@ -1,25 +1,20 @@
 class CandidateTasksController < ApplicationController
   before_action :set_candidate_task, only: %i[ show edit update destroy ]
 
-  # GET /candidate_tasks or /candidate_tasks.json
   def index
     @candidate_tasks = CandidateTask.all
   end
 
-  # GET /candidate_tasks/1 or /candidate_tasks/1.json
   def show
   end
 
-  # GET /candidate_tasks/new
   def new
     @candidate_task = CandidateTask.new
   end
 
-  # GET /candidate_tasks/1/edit
   def edit
   end
 
-  # POST /candidate_tasks or /candidate_tasks.json
   def create
     @candidate_task = CandidateTask.new(candidate_task_params)
 
@@ -34,7 +29,6 @@ class CandidateTasksController < ApplicationController
     end
   end
 
-  # PATCH/PUT /candidate_tasks/1 or /candidate_tasks/1.json
   def update
     respond_to do |format|
       if @candidate_task.update(candidate_task_params)
@@ -47,7 +41,6 @@ class CandidateTasksController < ApplicationController
     end
   end
 
-  # DELETE /candidate_tasks/1 or /candidate_tasks/1.json
   def destroy
     @candidate_task.destroy
     respond_to do |format|
@@ -56,13 +49,15 @@ class CandidateTasksController < ApplicationController
     end
   end
 
+  def grouped_candidate_tasks
+    @candidates = Candidate.all
+  end
+
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_candidate_task
       @candidate_task = CandidateTask.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def candidate_task_params
       params.require(:candidate_task).permit(:task_id, :candidate_id)
     end

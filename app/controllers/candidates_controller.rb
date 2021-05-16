@@ -1,25 +1,20 @@
 class CandidatesController < ApplicationController
   before_action :set_candidate, only: %i[ show edit update destroy ]
 
-  # GET /candidates or /candidates.json
   def index
     @candidates = Candidate.all
   end
 
-  # GET /candidates/1 or /candidates/1.json
   def show
   end
 
-  # GET /candidates/new
   def new
     @candidate = Candidate.new
   end
 
-  # GET /candidates/1/edit
   def edit
   end
 
-  # POST /candidates or /candidates.json
   def create
     @candidate = Candidate.new(candidate_params)
 
@@ -34,7 +29,6 @@ class CandidatesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /candidates/1 or /candidates/1.json
   def update
     respond_to do |format|
       if @candidate.update(candidate_params)
@@ -47,7 +41,6 @@ class CandidatesController < ApplicationController
     end
   end
 
-  # DELETE /candidates/1 or /candidates/1.json
   def destroy
     @candidate.destroy
     respond_to do |format|
